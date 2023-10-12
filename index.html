@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale-1.0">
     <meta name="description" content="GoIT Homework">
-    <title>GoIT Homework 05</title>
+    <title>GoIT Homework 06</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/modern-normalize.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap">
@@ -384,25 +384,11 @@
           </ul>
         </div>
       </section>
-
-      <div class="backdrop conceal" data-modal>
-        <div class="modal">
-          <button class="modal-close" type="button" data-modal-close>
-            <svg class="modal-close-icon" viewBox="0 0 8 8">
-              <use href="images/icons.svg#modal-close"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <script
-        src="./js/modal.js">
-      </script>
     </main>
 
     <footer class="body-footer">
       <div class="footer container">
-        <div>
+        <div class="footer-footnote">
           <a class="logo" href="index.html">
             WEB<span class="footer-logo">STUDIO</span>
           </a>
@@ -413,7 +399,7 @@
           </p>
         </div>
         
-        <div>
+        <div class="footer-platforms">
           <p class="footer-socmed">Social Media</p>
   
           <ul class="footer-socmed-list">
@@ -450,7 +436,44 @@
             </li>
           </ul>
         </div>
+
+        <div class="footer-form">
+          <form name="subscription-form" autocomplete="on" method="">
+            <label class="footer-form-label">
+              <p class="footer-form-subscription">
+                Subscribe
+              </p>
+              <input
+                class="footer-form-input"
+                type="email"
+                name="email"
+                placeholder="E-mail"
+                required
+              />
+            </label>
+
+            <button class="subscribe-button" type="submit">
+              Subscribe
+              <svg class="footer-form-subscribe" width="24" height="24" viewbox="0 0 24 24">
+                <use href="images/icons.svg#subscribe"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
+
+    <!-- Modal Section -->
+    <div class="backdrop conceal" data-modal>
+      <div class="modal">
+        <button class="modal-close" type="button" data-modal-close>
+          <svg class="modal-close-icon" viewBox="0 0 8 8">
+            <use href="images/icons.svg#modal-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>
