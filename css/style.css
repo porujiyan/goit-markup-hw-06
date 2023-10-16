@@ -411,12 +411,14 @@ textarea {
 }
 
 .modal-checkbox {
-  appearance: none;
-  width: 0;
-  height: 0;
+  /* appearance: none; */
+  position: absolute;
+  width: 16px;
+  height: 16px;
   margin: 0;
   padding: 0;
   border: 0;
+  opacity: 0;
 }
 
 .checkbox-icon {
@@ -424,15 +426,15 @@ textarea {
   border-radius: 2px;
   width: 16px;
   height: 16px;
-  fill: none;
+  padding: 3px 2px;
+  fill: var(--white);
   cursor: pointer;
   transition: border var(--animation);
 }
 
-.modal-checkbox:checked + svg {
-  border: none;
+.modal-checkbox:checked + .checkbox-icon {
+  border-color: var(--iris);
   background-color: var(--iris);
-  fill: var(--white);
 }
 
 .checkbox-icon:hover,
@@ -440,9 +442,10 @@ textarea {
   border: 1px solid var(--iris);
 }
 
-/* .checkbox-text {
+.checkbox-text {
   margin-left: 9px;
-} */
+  margin-top: 3px;
+}
 
 .form-agreement {
   color: var(--iris);
