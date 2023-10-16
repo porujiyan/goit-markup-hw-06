@@ -438,7 +438,7 @@
         </div>
 
         <div class="footer-form">
-          <form name="subscription-form" autocomplete="on" method="">
+          <form name="subscription-form" autocomplete="off" method="post" action="#">
             <label class="footer-form-label">
               <p class="footer-form-subscription">
                 Subscribe
@@ -467,11 +467,65 @@
     <div class="backdrop conceal" data-modal>
       <div class="modal">
         <button class="modal-close" type="button" data-modal-close>
-          <svg class="modal-close-icon" viewBox="0 0 8 8">
+          <svg class="modal-close-icon" width="8" height="8" viewBox="0 0 8 8">
             <use href="images/icons.svg#modal-close"></use>
           </svg>
         </button>
+
+        <div class="modal-information">
+          <p class="modal-header">
+            Leave your contacts and we will call you back
+          </p>
+
+          <form class="modal-form" autocomplete="off" method="post" action="#">
+            <label class="form-label" for="full_name">
+              Name
+              <input class="form-input" type="text" name="full_name" required>
+              <svg class="input-icon" width="18" height="18" viewBox="0 0 18 18">
+                <use href="images/icons.svg#modal-name"></use>
+              </svg>
+            </label>
+    
+            <label class="form-label" for="phone_number">
+              Phone
+              <input class="form-input" type="tel" name="phone_number" required>
+              <svg class="input-icon" width="18" height="24" viewBox="0 0 18 24">
+                <use href="images/icons.svg#modal-phone"></use>
+              </svg>
+            </label>
+    
+            <label class="form-label" for="email_address">
+              Email
+              <input class="form-input" type="email" name="email_address" required>
+              <svg class="input-icon" width="18" height="24" viewBox="0 0 18 24">
+                <use href="images/icons.svg#modal-email"></use>
+              </svg>
+            </label>
+    
+            <label class="form-comment" for="comments">
+              Comment
+              <textarea class="form-textarea" placeholder="Text input" name="comments"></textarea>
+            </label>
+
+            <label class="form-terms" for="agree">
+              <input class="modal-checkbox" type="checkbox" name="agree" value="agree" required>
+                <svg class="checkbox-icon" width="16" height="16" viewBox="0 0 10 8">
+                  <use href="images/icons.svg#modal-check"></use>
+                </svg>
+              I accept the terms and conditions of the <a class="form-agreement" href="#" target="_blank" rel="noreferrer noopener">Privacy Policy</a>
+            </label>
+          </form>
+
+          <button class="form-send" type="submit">
+            Send
+          </button>
+        </div>
       </div>
+
+
+
+
+
     </div>
 
     <script src="./js/modal.js"></script>

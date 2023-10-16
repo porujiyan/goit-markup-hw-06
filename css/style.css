@@ -30,6 +30,8 @@
   /* --shadow-modal-two: #00000033; filter one*/
   --shadow-modal-three: #00000024;
 
+  --link-underline: #0000ff00;
+
   --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* --- Color Scheme --- */
@@ -96,6 +98,15 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+input {
+  outline: none;
+}
+
+textarea {
+  outline: none;
+  resize: none;
 }
 
 .container {
@@ -240,6 +251,7 @@ ul {
   background-color: var(--ocean);
 }
 
+/* Modal Style */
 .backdrop {
   background-color: var(--navyblue-modal);
   display: block;
@@ -259,6 +271,7 @@ ul {
 
 .modal {
   position: absolute;
+  padding: 24px;
   top: 50%;
   left: 50%;
   min-width: 408px;
@@ -277,6 +290,8 @@ ul {
   width: 24px;
   height: 24px;
   border-radius: 50%;
+  align-items: center;
+  justify-content: center;
   color: var(--navyblue);
   border: 1px solid var(--navyblue-modal);
   position: absolute;
@@ -289,14 +304,176 @@ ul {
 
 .modal-close-icon {
   width: 8px;
-  height: 10px;
-  fill: currentColor;
+  height: 8px;
+  fill: var(--navyblue);
+  transition: fill var(--animation);
 }
 
 .modal-close:hover {
-  color: var(--cloud);
   background-color: var(--ocean);
   border-color: var(--ocean);
+  color: var(--cloud);
+}
+
+.modal-close:hover .modal-close-icon {
+  fill: var(--cloud);
+}
+
+.modal-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-header {
+  color: var(--navyblue);
+  text-align: center;
+  font-weight: 500;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 4px;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  color: var(--lightslate);
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: .48px;
+}
+
+.form-input {
+  width: 360px;
+  height: 40px;
+  padding: 11px 16px 11px 38px;
+  border-radius: 4px;
+  border: 1px solid var(--navyblue-modal);
+  transition: border var(--animation);
+}
+
+.input-icon {
+  position: absolute;
+  left: 40px;
+  width: 18px;
+  height: 24px;
+  transform: translateY(95%);
+  fill: var(--navyblue);
+  transition: fill var(--animation);
+}
+
+.form-textarea {
+  width: 360px;
+  height: 120px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid var(--navyblue-modal);
+  transition: border var(--animation);
+}
+
+.form-input:hover,
+.form-input:focus,
+.form-textarea:hover,
+.form-textarea:focus {
+  border: 1px solid var(--iris);
+}
+
+.form-input:hover + .input-icon,
+.form-input:focus + .input-icon {
+  fill: var(--iris);
+}
+
+.form-comment {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  color: var(--lightslate);
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: .48px;
+}
+
+.form-terms {
+  display: block;
+  color: var(--lightslate);
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: .48px;
+}
+
+.modal-checkbox {
+  appearance: none;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.checkbox-icon {
+  border: 1px solid var(--navyblue-modal);
+  border-radius: 2px;
+  width: 16px;
+  height: 16px;
+  fill: none;
+  cursor: pointer;
+  transition: border var(--animation);
+}
+
+.modal-checkbox:checked + svg {
+  border: none;
+  background-color: var(--iris);
+  fill: var(--white);
+}
+
+.checkbox-icon:hover,
+.checkbox-icon:focus {
+  border: 1px solid var(--iris);
+}
+
+/* .checkbox-text {
+  margin-left: 9px;
+} */
+
+.form-agreement {
+  color: var(--iris);
+  text-decoration: underline;
+  line-height: 16px;
+  transition: color, text-decoration-color var(--animation);
+}
+
+.form-agreement:hover,
+.form-agreement:focus {
+  color: var(--ocean);
+  text-decoration-color: var(--link-underline);
+}
+
+.form-send {
+  margin-top: 24px;
+  width: 169px;
+  height: 56px;
+  padding: 16px 32px;
+  border-radius: 4px;
+  background-color: var(--iris);
+  box-shadow: 0px 4px 4px 0px var(--shadow-box);
+  color: var(--white);
+  font-weight: 500;
+  letter-spacing: .64px;
+  transition: background-color var(--animation);
+}
+
+.form-send:hover,
+.form-send:focus {
+  background-color: var(--ocean);
 }
 /* Hero Section */
 
@@ -532,10 +709,14 @@ ul {
   background-color: var(--green);
 }
 
-.footer-socmed-icon,
-.footer-form-subscribe {
+.footer-socmed-icon {
   width: auto;
   fill: var(--cloud);
+}
+
+.footer-form-subscribe {
+  width: auto;
+  fill: var(--white);
 }
 
 .footer-form form {
